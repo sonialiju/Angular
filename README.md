@@ -12,9 +12,10 @@ The app starts with login form, you can login with following details:admin@admin
  
  Install angular cli
  
- cd angular
+ Download the project and copy the folder 'angular-master' to your working directory
+ 
+ cd angular-master
  
  npm install
  
- ng serve --open
- 
+ ng serve --open or directly paste  http://localhost:4200/ in your browser
