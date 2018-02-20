@@ -1,0 +1,6 @@
+.has-danger input, .form-control-feedback{
+    border-color: red;
+}
+.has-success input{
+    border-color: green;
+}

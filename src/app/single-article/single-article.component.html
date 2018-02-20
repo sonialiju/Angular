@@ -1,0 +1,14 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a routerLink="/dashboard" class="navbar-brand">
+      <span class="glyphicon glyphicon-home"></span>
+      Home
+    </a>
+  </li>
+</ul>
+
+<div *ngIf="successFlag">
+  <h3>{{article.singleItem.title}}</h3>
+  <p>{{article.singleItem.body}}</p>
+</div>
+

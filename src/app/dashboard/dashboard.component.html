@@ -1,0 +1,38 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a routerLink="/dashboard" class="navbar-brand">
+      <span class="glyphicon glyphicon-home"></span>
+      Home
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/addarticle">Add Article</a>
+  </li>
+
+</ul>
+<div class="alert alert-warning">
+  <strong>Note!</strong> Please note that as the site uses fake api, the deleted article won't be actually deleted from the list.
+</div>
+
+<h3>All Articles</h3>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Title</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let article of articles.results">
+    <td>{{ article.id }}</td>
+    <td>{{ article.title }}</td>
+    <td><a [routerLink]="['articleview',article.id]">View</a></td>
+    <!--<td><a [routerLink]="['editarticle',article.id]">Edit</a></td>-->
+    <td><button class="btn btn-primary" (click)="doDELETE(article.id)">DELETE</button></td>
+  </tr>
+  </tbody>
+</table>
+
+

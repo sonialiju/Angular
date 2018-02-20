@@ -1,0 +1,53 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a routerLink="/dashboard" class="navbar-brand">
+      <span class="glyphicon glyphicon-home"></span>
+      Home
+    </a>
+  </li>
+</ul>
+<div>
+  <div class="alert alert-warning">
+    <strong>Note!</strong> Please note that as the site uses fake api, the newly created article will not be updated in the list.
+  </div>
+
+  <h1>Add Article</h1>
+
+  <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="form-group"
+           [ngClass]="{
+      'has-danger': title.invalid && (title.dirty || title.touched),
+      'has-success': title.valid && (title.dirty || title.touched)
+    }">
+        <label>Title</label>
+        <input type="text" name="title"
+               [(ngModel)]="model.title"
+               class="form-control" required="required"
+               #title="ngModel">
+        <div class="form-control-feedback"
+             *ngIf="title.errors && (title.dirty || title.touched)">
+          <p *ngIf="title.errors.required">Title is required</p>
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label>Body</label>
+      <textarea name="body" [(ngModel)]="model.body"
+          class="form-control" #body="ngModel">
+      </textarea>
+    </div>
+
+
+
+    <pre>{{f.value | json}}</pre>
+    <button type="submit" class="btn btn-primary"  [disabled]="f.invalid">Submit</button>
+    <button type="reset" class="btn btn-primary" >Reset</button>
+
+  </form>
+</div>
+
+<!--<a routerLink="dashboard" class="navbar-brand">-->
+<!--<span class="glyphicon glyphicon-home"></span>-->
+<!--Dashboard-->
+<!--</a>-->
+<!--<router-outlet></router-outlet>-->
